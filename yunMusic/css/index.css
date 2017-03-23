@@ -34,21 +34,129 @@ a {
 a:hover {
 	text-decoration: none;
 }
-body{width: 320px; margin: 0 auto; font-family: arial,"微软雅黑"; position: relative;}
-header .header_t{background: #000088; overflow: hidden;}
-header h1{line-height: 70px; color: #fff; float: left;}
-header button{float: right;}
-header #nav{line-height: 30px; background: #006DCC;}
-header #nav li{display: inline-block; box-sizing: border-box;}
-header #nav li a{color: #ccc; display: block; padding: 0 10px; margin: 0 5px;}
-header #nav li.active{border-bottom: 3px solid red;}
-header #nav li.active a{color: #;}
-footer{background: #003399; color: #fff; position: fixed; bottom: 0; width: 320px; overflow: hidden; height: 40px;}
-footer .btns{float: left;}
-footer .btns .btn{height: 40px ; width: 40px; line-height: 40px; text-align: center; background: #000066; cursor: pointer;}
-footer .btns .hidden{display: none;}
-footer .time_line{float:left; margin: 0 10px; width: 65%; height: 100%; position: relative; }
-footer .time_line .line_empty{width:100%; height: 8px; background: #2C2C2C; border-radius: 4px; position: absolute; top:50%;}
-footer .time_line .line_red{width: 0%; height: 100%; background: red; border-radius: 4px; }
-footer .time_line span{display:block;height: 20px; width: 20px; border-radius: 50%; background: #fff; position: absolute; left: -7px; top:-6px;}
-footer .play_time{float:right; line-height: 45px; padding: 0 5px;}
+
+body {
+	width: 320px;
+	margin: 0 auto;
+	font-family: arial, "微软雅黑";
+	position: relative;
+}
+
+header .header_t {
+	background: #000088;
+	overflow: hidden;
+}
+
+header h1 {
+	line-height: 70px;
+	color: #fff;
+	float: left;
+}
+
+header button {
+	float: right;
+}
+
+header #nav {
+	line-height: 30px;
+	background: #006DCC;
+}
+
+header #nav li {
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+header #nav li a {
+	color: #ccc;
+	display: block;
+	padding: 0 10px;
+	margin: 0 5px;
+}
+
+header #nav li.active {
+	border-bottom: 3px solid red;
+}
+
+header #nav li.active a {
+	color: #;
+}
+
+footer {
+	background: #003399;
+	color: #fff;
+	position: fixed;
+	bottom: 0;
+	width: 320px;
+	overflow: hidden;
+	height: 40px;
+}
+
+footer .btns {
+	float: left;
+}
+
+footer .btns .btn {
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #000066;
+	cursor: pointer;
+}
+
+footer .btns .hidden {
+	display: none;
+}
+
+footer .time_line {
+	float: left;
+	margin: 0 10px;
+	width: 65%;
+	height: 100%;
+	position: relative;
+}
+
+footer .time_line .line_empty {
+	width: 100%;
+	height: 8px;
+	background: #2C2C2C;
+	border-radius: 4px;
+	position: absolute;
+	top: 60%;
+}
+
+footer .time_line .line_red {
+	width: 0%;
+	height: 100%;
+	background: red;
+	border-radius: 4px;
+}
+
+footer .time_line .line_crol {
+	display: block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #fff;
+	position: absolute;
+	left: -7px;
+	top: -6px;
+}
+footer .time_line .music_name{
+	line-height: 20px;
+	font-size: 14px;
+	padding: 0 10px;
+	color: #F7ECB5;
+}
+footer .time_line .name{
+	line-height: 20px;
+	font-size: 12px;
+	padding: 0 10px;
+	color: #FFDDDD;
+}
+footer .play_time {
+	float: right;
+	line-height: 45px;
+	padding: 0 5px;
+}

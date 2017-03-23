@@ -1,42 +1,54 @@
-function UrlSearch() {
-	var name, value;
-	var str = location.href; //取得整个地址栏
-	var num = str.indexOf("?")
-	str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
-
-	var arr = str.split("&"); //各个参数放到数组里
-	for(var i = 0; i < arr.length; i++) {
-		num = arr[i].indexOf("=");
-		if(num > 0) {
-			name = arr[i].substring(0, num);
-			value = arr[i].substr(num + 1);
-			this[name] = value;
-		}  
-	}
+function gitUrl(){
+	
 }
-var Request = new UrlSearch(); //实例化
-alert(Request.name);
 
-function route(m, n, fn) { //加载模块（模块名，位置）
+function route(m, n) { //加载模块（模块名，位置）
 	$.ajax({
 		type: "get",
 		url: "pages/" + m + ".html",
 		success: function(data) {
 			n.append(data)
-			fn && fn();
+			$.ajax({ //先加载页面，再执行JS文件
+				url: "js/" + m + ".js",
+				datatype: 'script'
+			});
 		}
 	});
 }
-$(function() {
-	route('header', $('header'), function() {
-		$.ajax({
-			type: "get",
-			url: "js/index.js",
-			success: function(data) {
-				$('head').append(data)
-			}
-		});
-	});
 
-	route('player', $('footer'))
+function playerAPI(callback) { //获取playerListAPI
+	$.ajax({
+		url: "data/playlist.json",
+		success: function(data) {
+			if(data.code == 200) {
+				callback(data.playlists)
+			}
+		}
+	});
+}
+
+function playlists(data) { //处理返回的json数据
+//	for(var i = 0; i < data.length; i++) {
+//		$('<div id="itm">' + data[i].playCount + '<div></div><img src=' + data[i].coverImgUrl + '/><p>' + data.name + '</p></div>').appendTo($('#share'))
+//	}
+}
+$(function() { //加载头部及播放器模块
+	if(!localStorage.count) {
+		localStorage.count = 0;
+
+	}
+	localStorage.count++;
+	if(localStorage.count == 1) {
+		route('header', $('header'))
+	} else {
+		route('header', $('header'))
+		route('player', $('footer'))
+	}
+	playerAPI(playlists) //
+	
+	window.onhashchange=function(){//页面hash值改变时候执行
+		
+		console.log(window.location.href)
+	}
+
 })
