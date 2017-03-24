@@ -1,16 +1,34 @@
 //获取json数据
+	var server="http://musicapi.duapp.com/api.php"
 	function getUrlList(limit,callback){
-		var server="http://musicapi.duapp.com/api.php"
-		$.ajax({
-			url:server+"?type=topPlayList&cat=%E5%85%A8%E9%83%A8&offset=0&limit="+limit,
-			success:function(data){
-				if(data.code==200){
-					callback(data.playlists)
-				}else{
-					callback(false)
+		limit=limit||6;
+		if(checkCache()){
+			callback(JSON.parse(localStorage.playlists))
+			console.log("访问缓存")
+		}else{
+			$.ajax({
+				url:server+"?type=topPlayList&cat=%E5%85%A8%E9%83%A8&offset=0&limit="+limit,
+				success:function(data){
+					if(data.code==200){
+						localStorage.playlists=JSON.stringify(data.playlists)
+						localStorage.timer=new Date().getTime()
+						callback(data.playlists)
+						console.log("访问网络")
+					}else{
+						callback(false)
+					}
 				}
-			}
-		});
+			});
+		}
+	}
+	//判断访问缓存还是网络
+	function checkCache(){
+		if(!localStorage.playlists)
+			return false
+		if(new Date().getTime()-localStorage.timer >10*60*1000)
+			return false
+			
+		return true
 	}
 //动态显示json数据里的内容
 	(function(){
@@ -99,7 +117,7 @@ $(function(){
 		var lit=$(this).parent().offset()[1]
 		if(lit>160)
 		$("ol li").eq(index+1).trigger("click")
-		if(lit<-160)
+		if(lit<0)
 		$("ol li").eq(index-1).trigger("click")
 		
 		$("ol li").eq(index).trigger("click")
