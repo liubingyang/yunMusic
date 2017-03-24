@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-<<<<<<< 8cb591d1b756f57795429a9e884ef0290f248c75
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>list</title>
-	<link rel="stylesheet" href="../css/musicList.css">
+	<link rel="stylesheet" href="../css/musicList.css" />
 	<script src="../js/jquery-3.1.0.min.js"></script>
-	<script>
-		$(function () {
-			$(window).on("scroll",function () {
-
-				var scrollTop =$(document).scrollTop();
-				$("#header").css("background","rgba(255,0,0,"+scrollTop/200+")");
-
-				if(scrollTop >=100){
-					$("#header p").html("歌单名称")
-				}else if(scrollTop <=100){
-					$("#header p").html("歌单")
-				}
-			})
-		})
-	</script>
+	<script src="../js/app.js"></script>
+	<script src="../js/musicMenu.js"></script>
 </head>
 <body>
 
@@ -48,48 +34,22 @@
 		</div>
 	</div>
 	<!--下面的地方放置歌单-->
-	<div class="mansion clear">
-		<!--播放全部-->
-		<div class="add">
-			<!--取消button 的样式-->
-			<button>
-				<div></div>
-				<p>播放全部</p>
-			</button>
-		</div>
-		<hr class="line">
-		<div class="mic_list">
-			<div>
-				<div class="item mic_box">
-					<div class="item mic_name">
-						<div class="numb">1</div>
-						<div class="content">
-							<div class="mic_title">歌曲</div>
-							<div class="mic_text">歌手</div>
-						</div>
-					</div>
-				</div>
-				<hr class="line">
+	<ul class="mansion">
+		
+	</ul>
+	
+	<div id='music_item' style="display: none;">
+		<li>
+			<div class="num"></div>
+			<div class="content">
+				<div class="music_name"></div>
+				<div class="ar_name"></div>
 			</div>
-
-
-		</div>
+		</li>
 	</div>
-
+	
 </div>
 </body>
 </html>
 <!--需要实现header 的滚动效果-->
-=======
-<html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-
-	<body>
-	</body>
-
-</html>
->>>>>>> 0.0.3

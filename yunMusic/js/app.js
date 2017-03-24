@@ -1,7 +1,14 @@
-function gitUrl(){
-	
-}
 
+//主模块
+//-------------------------------------------
+
+
+function getParamByUrl() {//获取地址href值
+	var url=window.location.href;
+   var index = url.split("#");
+   return index[1];
+}
+//---------------------------------------------
 function route(m, n) { //加载模块（模块名，位置）
 	$.ajax({
 		type: "get",
@@ -15,40 +22,41 @@ function route(m, n) { //加载模块（模块名，位置）
 		}
 	});
 }
-
+//---------------------------------------------------------
 function playerAPI(callback) { //获取playerListAPI
+	if(cachetime()){//判断是否缓存
+		callback(JSON.parse(localStorage.playlists))//反序列化
+	}
+	
 	$.ajax({
 		url: "data/playlist.json",
 		success: function(data) {
 			if(data.code == 200) {
+				localStorage.playlists=data.playlists.toString();//数据序列换存入缓存
+				localStorage.cachetime=new Date().getTime();
 				callback(data.playlists)
 			}
 		}
 	});
 }
-
-function playlists(data) { //处理返回的json数据
-//	for(var i = 0; i < data.length; i++) {
-//		$('<div id="itm">' + data[i].playCount + '<div></div><img src=' + data[i].coverImgUrl + '/><p>' + data.name + '</p></div>').appendTo($('#share'))
-//	}
+//---------------------------------------------------------
+function cachetime(){//判断缓存条件
+	if(!localStorage.playlists)
+	console.log(1)
+	return false;
+	if(new Date().getTime()-localStorage.cachetime>10*1000)
+	console.log(2)
+	return false;	
+	console.log(3)
+	return true;
 }
-$(function() { //加载头部及播放器模块
-	if(!localStorage.count) {
-		localStorage.count = 0;
 
-	}
-	localStorage.count++;
-	if(localStorage.count == 1) {
-		route('header', $('header'))
-	} else {
+//------------------------------------------------------------
+$(function() { //加载头部及播放器模块
 		route('header', $('header'))
 		route('player', $('footer'))
-	}
-	playerAPI(playlists) //
 	
-	window.onhashchange=function(){//页面hash值改变时候执行
-		
-		console.log(window.location.href)
+		window.onhashchange=function(){//页面hash值改变时候执行
+		route(getParamByUrl(), $('#share'))
 	}
-
 })

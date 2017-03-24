@@ -1,0 +1,39 @@
+#music_menu {
+	display: flex;
+	width: 320px;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+#music_menu .item {
+	width: 45%;
+	height: auto;
+	border: 1px solid #ccc;
+	position: relative;
+	padding: 5px;
+}
+
+#music_menu .item .cont {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	text-align: right;
+	width: 100%;
+	height: 30px;
+	background: rgba(0, 0, 0, .5);
+}
+
+#music_menu .item .pic {
+	width: 100%;
+}
+
+#music_menu .item .pic img {
+	width: 100%;
+	height: auto;
+}
+
+#music_menu .item p {
+	height: 20px;
+	line-height: 20px;
+}
