@@ -1,0 +1,24 @@
+<view class='my-infor'>
+  <view class='listen-num'>
+    <view>1774</view>
+    <view>听歌数</view>
+  </view>
+  <view class='head-portrait'>
+    <image class='head-image' src='http://p2.music.126.net/v-vLNsUImLDIuNdb_J4mRA==/18547661650995942.jpg?imageView&thumbnail=240x0&quality=75&tostatic=0'></image>
+    <view class='head-name'>神威有有 <icon class='name-icon'></icon></view>
+    <view class='head-follow'><icon class='follor-icon'></icon>关注</view>
+  </view>
+   <view class='fun-num'>
+    <view>1774</view>
+    <view>粉丝数</view>
+  </view>
+</view>
+
+<view class='song-tit'>歌单（22）</view>
+<view class='song-lists' wx:for='{{22}}'>
+  <image class='list-image' src='http://p3.music.126.net/8PsqtEHehC3pfnsxXu8Kuw==/109951163095071740.webp?imageView&thumbnail=100x0&quality=75&tostatic=0&type=webp'></image>
+  <view class='list-right'>
+    <view class='list-name'>神威有呆毛喜欢的音乐</view>
+    <view class='play-num'>156首，播放22317次</view>
+  </view>
+</view>

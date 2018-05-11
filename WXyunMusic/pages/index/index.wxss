@@ -1,0 +1,29 @@
+@import "/template/songSheet/songSheet.wxss";
+@import "/template/musicLists/musicLists.wxss";
+.content-title{
+  background: #eee;
+  display: flex;
+  flex-direction: row;
+  height: 104rpx;
+  align-items:center;
+  font-size: 34rpx;
+}
+.title-line{
+  width: 6rpx;
+  height: 50rpx;
+  background: #d43c33;
+  margin-right: 20rpx;
+}
+.recommend-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.banquan{
+  margin-top:20rpx;
+  color:#888;
+  font-size: 20rpx;
+  line-height: 100rpx;
+  text-align: center;
+}

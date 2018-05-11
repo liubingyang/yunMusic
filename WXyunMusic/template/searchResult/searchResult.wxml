@@ -1,0 +1,12 @@
+<template name='searchResult'>
+  <import src='/template/musicLists/musicLists.wxml' />
+  <text class='best-tit'>最佳匹配</text>
+  <view class='best-result'>
+    <image class='best-image' src='http://p1.music.126.net/w_UWOls2uCkFN_U62788Xg==/18806046882229308.webp?imageView&thumbnail=100x0&quality=75&tostatic=0&type=webp'></image>
+    <text class='best-name'>歌手: 赵雷 (雷子)</text>
+    <icon class='best-icon'></icon>
+  </view>
+  <view class='best-lists'>
+    <template is='musicLists' wx:for='{{10}}'></template>
+  </view>
+</template>

@@ -1,0 +1,126 @@
+@import '/template/musicLists/musicLists.wxss';
+@import '/template/comment/comment.wxss';
+.lists-head-image{
+  width: 260rpx;
+  height: 260rpx;
+}
+.lists-head{
+  position: relative;
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: 20rpx;
+}
+.lists-play-num{
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 240rpx;
+  text-align: right;
+  background: rgba(33,33,33,.1);
+  color:#fff;
+  font-size: 34rpx;
+  padding: 10rpx;
+}
+.red-icon{
+  position: absolute;
+  left: 0;
+  top:40rpx;
+  background: rgba(217,48,48,.8);
+  color:#fff;
+  padding: 5rpx 20rpx;
+  font-size: 30rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+}
+.lists-play-icon{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMiAyMCI+PGcgb3BhY2l0eT0iLjE1Ij48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwNDAwMDAiIGQ9Im0yMiAxNi43NzdjMCAxLjIzMy0xLjEyMSAyLjIzMy0yLjUwNiAyLjIzMy0xLjM4NCAwLTIuNTA2LTEtMi41MDYtMi4yMzN2LTIuNTUzYzAtMS4yMzQgMS4xMjItMi4yMzMgMi41MDYtMi4yMzMuMTc0IDAgLjM0My4wMTcuNTA2LjA0NnYtMS4zN2gtLjAzM2MuMDE3LS4yMi4wMzMtLjQ0MS4wMzMtLjY2NiAwLTQuNDE4LTMuNTgyLTgtOC04LTQuNDE4IDAtOCAzLjU4Mi04IDggMCAuMjI1LjAxNi40NDYuMDM0LjY2NmgtLjAzNHYxLjM3Yy4xNjMtLjAyOS4zMzMtLjA0Ni41MDUtLjA0NiAxLjM4NCAwIDIuNTA2Ljk5OSAyLjUwNiAyLjIzM3YyLjU1M2MwIDEuMjMzLTEuMTIyIDIuMjMzLTIuNTA2IDIuMjMzcy0yLjUwNS0uOTk5LTIuNTA1LTIuMjMzdi0yLjU1M2MwLS4yNTguMDU5LS41MDEuMTQ4LS43My0uMDg1LS4xNDgtLjE0OC0uMzEtLjE0OC0uNDkzdi0yLjY2N2MwLS4wMjMuMDEyLS4wNDMuMDEzLS4wNjctLjAwNC0uMDg4LS4wMTMtLjE3Ni0uMDEzLS4yNjYgMC01LjUyMyA0LjQ3Ny0xMCAxMC0xMCA1LjUyMyAwIDEwIDQuNDc3IDEwIDEwIDAgLjA5LS4wMDkuMTc4LS4wMTQuMjY2LjAwMi4wMjQuMDE0LjA0NC4wMTQuMDY3djJjMCAuMzA2LS4xNDUuNTY5LS4zNi43NTMuMjI0LjMzNC4zNi43Mi4zNiAxLjEzOHYyLjU1MiIvPjwvZz48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNmZmYiIGQ9Im0yMCAxNi43NzdjMCAxLjIzMy0xLjEyMSAyLjIzMy0yLjUwNiAyLjIzMy0xLjM4NCAwLTIuNTA2LTEtMi41MDYtMi4yMzN2LTIuNTUzYzAtMS4yMzQgMS4xMjItMi4yMzMgMi41MDYtMi4yMzMuMTc0IDAgLjM0My4wMTcuNTA2LjA0NnYtMS4zN2gtLjAzM2MuMDE3LS4yMi4wMzMtLjQ0MS4wMzMtLjY2NiAwLTQuNDE4LTMuNTgyLTgtOC04LTQuNDE4IDAtOCAzLjU4Mi04IDggMCAuMjI1LjAxNi40NDYuMDM0LjY2NmgtLjAzNHYxLjM3Yy4xNjMtLjAyOS4zMzMtLjA0Ni41MDUtLjA0NiAxLjM4NCAwIDIuNTA2Ljk5OSAyLjUwNiAyLjIzM3YyLjU1M2MwIDEuMjMzLTEuMTIyIDIuMjMzLTIuNTA2IDIuMjMzcy0yLjUwNS0uOTk5LTIuNTA1LTIuMjMzdi0yLjU1M2MwLS4yNTguMDU5LS41MDEuMTQ4LS43My0uMDg1LS4xNDgtLjE0OC0uMzEtLjE0OC0uNDkzdi0yLjY2N2MwLS4wMjMuMDEyLS4wNDMuMDEzLS4wNjctLjAwNC0uMDg4LS4wMTMtLjE3Ni0uMDEzLS4yNjYgMC01LjUyMyA0LjQ3Ny0xMCAxMC0xMCA1LjUyMyAwIDEwIDQuNDc3IDEwIDEwIDAgLjA5LS4wMDkuMTc4LS4wMTQuMjY2LjAwMi4wMjQuMDE0LjA0NC4wMTQuMDY3djJjMCAuMzA2LS4xNDUuNTY5LS4zNi43NTMuMjI0LjMzNC4zNi43Mi4zNiAxLjEzOHYyLjU1MiIvPjwvc3ZnPg==) no-repeat;
+}
+.lists-name{
+  padding-top:10rpx; 
+  width: 370rpx;
+  font-size:38rpx;
+  margin-bottom: 60rpx;
+  color:#fff;
+}
+.lists-author{
+  display: flex;
+  flex-direction: row;
+  align-items:  center;
+  font-size: 34rpx;
+  color:#fff;
+}
+.lists-author-head{
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.lists-tit{
+  display: flex;
+  flex-direction: row;
+  padding:40rpx;
+  position: absolute;
+  top:0;
+  width: 100%;
+}
+.lists-bg-wrap{
+  height: 340rpx;
+  overflow: hidden;
+}
+.lists-bg{
+  height: 340rpx;
+  background: url('http://music.163.com/api/img/blur/19184278882036646?param=170y170') no-repeat 0 -140rpx /cover;
+  filter: blur(20rpx) brightness(70%);
+}
+.lists-labels{
+  display: flex;
+  flex-direction: row;
+  color:#666;
+  font-size: 34rpx;
+ align-items: center;
+ padding: 40rpx;
+}
+.lists-label{
+  border:1rpx solid #ccc;
+  padding: 5rpx 20rpx;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+}
+.list-introduction{
+  padding: 0 40rpx;
+  line-height: 44rpx;
+  font-size: 34rpx;
+  color:#666;
+  max-height: 136rpx;
+  overflow: auto;
+  box-shadow: 0 20rpx 0 0 #fff; 
+}
+.song-lists{
+  margin-top:20rpx;
+  padding:20rpx 40rpx;
+  background: #eeeff0;
+  font-size: 34rpx;
+  color:#666;
+}
+.comment-tit{
+  padding:20rpx 40rpx;
+  background: #eeeff0;
+  font-size: 34rpx;
+  color:#666;
+}
+.song-content{
+  display: flex;
+  direction: row;
+  align-items: center;
+}
+.song-content-index{
+  font-size: 38rpx;
+  padding: 0 20rpx; 
+  color:#999;
+}
+.song-musicLists{
+  flex-grow: 1;
+}

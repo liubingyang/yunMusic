@@ -1,0 +1,18 @@
+<import src='/template/hotSearch/hotSearch.wxml'/>
+<import src='/template/searchList/searchList.wxml'/>
+<import src='/template/searchResult/searchResult.wxml'/>
+<view class='search-box'>
+  <icon class='search-icon'></icon>
+  <input class='search-input' type='text' placeholder='搜索歌曲、歌手、专辑' placeholder-class='search-placeholder'></input>
+  <icon class='search-xx'></icon>
+</view>
+
+<view class='hotSearch-content' >
+  <template is='hotSearch'></template>
+</view>
+<view class='searchList-content' wx:if='{{false}}'>
+  <template is='searchList'></template>
+</view>
+<view class='searchResult-content' wx:if='{{false}}'>
+  <template is='searchResult'></template>
+</view>

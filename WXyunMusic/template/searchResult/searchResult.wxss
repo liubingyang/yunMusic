@@ -1,0 +1,29 @@
+@import '/template/musicLists/musicLists.wxss';
+.best-tit{
+  font-size: 36rpx;
+  color:#666;
+  margin-left:20rpx;
+  line-height: 80rpx;
+}
+.best-result{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx 20rpx 20rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+.best-image{
+  height: 120rpx;
+  width: 120rpx;
+  margin-right: 25rpx;
+}
+.best-name{
+  font-size: 44rpx;
+  color:#333;
+  flex-grow: 1;
+}
+.best-icon{
+  height: 40rpx;
+  width: 40rpx;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAyNiI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSJub25lIiBzdHJva2U9IiM5YjliOWIiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBkPSJNMi45MzkgMjMuOTM5IDEzLjg3OSAxMyAyLjkzOSAyLjA2MSIvPjwvc3ZnPg==) no-repeat;
+}

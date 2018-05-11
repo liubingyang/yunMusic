@@ -1,0 +1,36 @@
+.misic-list{
+  height: 60rpx;
+  display: flex;
+  flex-direction:row; 
+  justify-content:space-between;
+  padding:30rpx 20rpx;
+  align-items:center;
+  border-bottom: 1rpx solid #eee;
+}
+.play-icon{
+  height: 66rpx;
+  width:66rpx;
+}
+.music-name{
+  font-size: 38rpx;
+  line-height: 50rpx;
+}
+.singer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.singer-so{
+  font-size: 20rpx;
+  color:red;
+  border:1rpx solid red;
+  height: 20rpx;
+  line-height: 18rpx;
+  margin-right: 15rpx;
+  padding:0 2rpx; 
+}
+.singer-name{
+  font-size: 30rpx;
+  color:#888;
+  line-height: 40rpx;
+}

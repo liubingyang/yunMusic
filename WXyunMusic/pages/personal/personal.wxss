@@ -1,0 +1,66 @@
+.my-infor{
+  height: 450rpx;
+  background:url("http://p1.music.126.net/MFAf6CiXP4hxmGelARFM8A==/109951162979735923.webp?imageView&thumbnail=828y534&quality=75&tostatic=0&type=webp") no-repeat;
+  background-size:100% 450rpx; 
+   color:#fff;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 50rpx;
+}
+.head-image{
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+}
+.fun-num,.listen-num{
+  font-size: 38rpx;
+  text-align: center;
+}
+.head-name{
+  font-size: 44rpx;
+}
+.head-follow{
+  margin-top:20rpx;
+  padding: 10rpx 40rpx;
+  border:1rpx solid #fff;
+  border-radius: 20rpx;
+  text-align: center;
+}
+.song-tit{
+  background: #eeeff0;
+  line-height: 80rpx;
+  font-size: 36rpx;
+  padding: 0 20rpx;
+  color:#666;
+}
+.song-lists{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx 0 0 20rpx;
+}
+.list-image{
+  height: 140rpx;
+  width: 140rpx;
+  margin-right: 20rpx;
+}
+.list-name{
+  color:#333;
+  font-size: 46rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 550rpx;
+}
+.play-num{
+  color:#888;
+  font-size: 34rpx;
+  line-height: 60rpx;
+}
+.list-right{
+  border-bottom: 1rpx solid #ececec;
+  flex-grow: 1;
+  padding:16rpx 0; 
+}

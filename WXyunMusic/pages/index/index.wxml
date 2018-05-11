@@ -1,0 +1,23 @@
+<import src='/template/songSheet/songSheet.wxml'/>
+<import src='/template/musicLists/musicLists.wxml'/>
+<view class='header'>
+  <view class='header-name'>网易云音乐</view>
+  <view class='header-download'>下载APP</view>
+</view>
+<view class='content-title'>
+  <view class='title-line'></view>推荐歌单   
+</view>
+<view class='recommend-content'>
+  <view  wx:for="{{personalizedList}}" bindtap='gotoPath' data-url-to='歌单页' data-id='{{item.id}}'>
+    <template is='songSheet' data='{{...item}}'></template>
+  </view> 
+</view>
+<view class='content-title'>
+  <view class='title-line'></view>最新音乐   
+</view>
+<view class='lastMusic-content'>
+  <view  wx:for="{{newSongList}}" bindtap='gotoPath' data-url-to='歌曲详情' data-id='{{item.id}}'>
+    <template is='musicLists' data='{{...item}}'></template>
+  </view>
+</view>
+<view class='banquan'>网易公司版权所有©1997-2018　杭州乐读科技有限公司运营</view>

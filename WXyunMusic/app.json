@@ -1,0 +1,58 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/hotSong/hotSong",
+    "pages/songDetails/songDetails",
+    "pages/songLists/songLists",
+    "pages/personal/personal",
+    "pages/search/search",
+
+    "template/hotSearch/hotSearch",
+    "template/searchResult/searchResult",
+    "template/searchList/searchList",
+    "template/songSheet/songSheet",
+    "template/musicLists/musicLists",
+    "template/comment/comment"
+
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#d43c33",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "推荐音乐",
+        "pagePath": "pages/index/index",
+        "iconPath":"images/ciwei.png",
+        "selectedIconPath":"images/ciwei_hl.png"
+      },
+      {
+        "text": "热歌单",
+        "pagePath": "pages/hotSong/hotSong",
+        "iconPath": "images/dianying.png",
+        "selectedIconPath": "images/dianying_hl.png"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/search/search",
+        "iconPath": "images/yuedu.png",
+        "selectedIconPath": "images/yuedu_hl.png"
+      },
+      {
+        "text": "我",
+        "pagePath": "pages/personal/personal",
+        "iconPath": "images/ciwei.png",
+        "selectedIconPath": "images/ciwei_hl.png"
+      }
+    ],
+    "color": "gray",
+    "selectedColor": "blue",
+    "backgroundColor": "white"
+  }
+}

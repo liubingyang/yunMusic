@@ -1,0 +1,14 @@
+<template name='songSheet'>
+<view>
+  <view class='list-icon'>
+    <image class='list-icon-image' src='{{picUrl}}'></image>
+    <view class='ear-icon'>
+      <view class='icon-image'></view>
+      <view class='number'>{{playCount}}</view>
+    </view>
+  </view>
+  <view class='list-discrib'>
+    {{name}}
+  </view>
+</view>
+</template>

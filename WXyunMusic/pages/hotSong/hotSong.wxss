@@ -1,0 +1,33 @@
+@import "/template/musicLists/musicLists.wxss";
+.hot-title {
+  background: url(//s3.music.126.net/m/s/img/hot_music_bg_2x.jpg?f01a252…) no-repeat;
+  background-size: contain;
+  height: 236rpx;
+  padding:30rpx 50rpx;
+}
+
+.title-name {
+  background: url(//s3.music.126.net/m/s/img/index_icon_2x.png?5207a28…) no-repeat;
+  background-size: 396rpx 221rpx;
+  width: 426rpx;
+  height: 168rpx;
+  background-position: -24px -30px;
+}
+.hot-time{
+  color:#fff;
+  font-size: 30rpx;
+  margin-top:20rpx;
+}
+.hot-lists{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.hot-list{
+  flex-grow:1
+}
+.lists-index{
+  width: 80rpx;
+  text-align: center;
+  font-size: 40rpx;
+}

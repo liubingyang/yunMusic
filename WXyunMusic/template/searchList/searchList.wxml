@@ -1,0 +1,9 @@
+<template name='searchList'>
+  <view class='input-copy'>
+    搜索“lala”
+  </view>
+  <view class='searchLists' wx:for='{{5}}'>
+    <icon class='searchList-icon'></icon>
+    <view class='searchLsit-value'>Avicii</view>
+  </view>
+</template>

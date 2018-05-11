@@ -1,0 +1,17 @@
+<template name='hotSearch'>
+  <view class='hotSearch-wrap'>
+    <view class='hotSearch-tit'>
+      热门搜索
+    </view>
+    <view class='hotSearch-labels'>
+      <view class='hotSearch-label' wx:for='{{10}}'>我们</view>
+    </view>
+    <view class='hotSearch-history' wx:for='{{3}}'>
+      <icon class='history-icon'></icon>
+      <view class='history-right'>
+        <view class='history-name'>炎亚纶</view>
+        <icon class='history-xx'></icon>
+      </view>
+    </view>
+  </view>
+</template>

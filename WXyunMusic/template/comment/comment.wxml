@@ -1,0 +1,17 @@
+<template name='comment'>
+<view class='comment-lists'>
+  <image class='comment-image' src='{{user.avatarUrl}}'></image>
+  <view class='comment-right'>
+    <view class='comment-author'>
+      <view class='comment-author-name'>{{user.nickname}}</view>
+      <view class='comment-time'>{{time}}</view>
+    </view>
+    <view class='comment-zan'>
+      <text>{{likedCount}}</text><image class='zan-image' src='/images/zan.png'></image>
+    </view>
+    <view class='comment-content'>
+      {{content}}
+    </view>
+  </view>
+</view>
+</template>

@@ -1,0 +1,51 @@
+
+.comment-lists{
+  display: flex;
+  flex-direction:row;
+   padding-top: 20rpx;
+}
+.comment-right{
+flex-grow: 1;
+ border-bottom: 1rpx solid #ececec;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ padding-right: 20rpx;
+}
+.zan-image{
+  height: 40rpx;
+  width: 40rpx;
+  margin-left: 20rpx;
+}
+.comment-zan{
+  display: flex;
+  align-items: center;
+  color:#999;
+  font-size: 34rpx;
+}
+.comment-author{
+  flex-grow: 1;
+}
+.comment-image{
+  
+  height: 80rpx;
+  width: 100rpx;
+  border-radius: 50%;
+  margin: 0 20rpx;
+}
+.comment-author-name{
+  color:#666;
+  font-size: 35rpx;
+}
+.comment-time{
+  font-size: 27rpx;
+  color:#999;
+}
+.comment-content{
+  font-size: 37rpx;
+  color:#333;
+  width: 620rpx;
+  margin-top:20rpx;
+  line-height: 50rpx;
+  padding-bottom: 20rpx;
+}

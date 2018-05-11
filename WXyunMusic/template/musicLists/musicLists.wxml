@@ -1,0 +1,12 @@
+<template name='musicLists'>
+  <view class='misic-list'>
+    <view class='music-left'>
+      <view class='music-name'>{{name}}</view>
+      <view class='singer'>
+        <view class='singer-so'>so</view>
+        <view class='singer-name'>{{song.artists[0].name||artists[0].name}}-{{song.album.name||album.name}}</view>
+      </view>
+    </view>
+    <image class='play-icon' src='/images/bofang.png'></image>
+  </view>
+</template>
