@@ -1,12 +1,11 @@
 <import src='/template/musicLists/musicLists.wxml'/>
 <view class='hot-title'>
   <view class='title-name'></view>
-  <view class='hot-time'>更新日期：05月10日</view>
+  <view class='hot-time'>更新日期：{{hotPlayList.updateTimeName}}</view>
 </view>
-<view class='hot-lists' wx:for='{{16}}'>
+<view class='hot-lists' wx:for='{{hotPlayList.tracks}}'  wx:if='{{index<20}}'>
   <view class='lists-index'>{{index+1}}</view>
-  <view class='hot-list'>
-    <template is='musicLists'></template>
+  <view class='hot-list' bindtap='gotoPath'  data-url-to='歌曲详情' data-id='{{item.id}}'>
+    <template is='musicLists'  data='{{...item}}'></template>
   </view>
-  
 </view>

@@ -9,6 +9,7 @@
     "pages/search/search",
 
     "template/hotSearch/hotSearch",
+    "template/hotSearch/searchHistory",
     "template/searchResult/searchResult",
     "template/searchList/searchList",
     "template/songSheet/songSheet",
@@ -21,7 +22,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#d43c33",
-    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTitleText": "小红人音乐",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {

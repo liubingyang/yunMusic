@@ -7,6 +7,7 @@
   align-items:center;
   border-bottom: 1rpx solid #eee;
 }
+ 
 .play-icon{
   height: 66rpx;
   width:66rpx;
@@ -14,6 +15,10 @@
 .music-name{
   font-size: 38rpx;
   line-height: 50rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 500rpx;
 }
 .singer{
   display: flex;
@@ -33,4 +38,8 @@
   font-size: 30rpx;
   color:#888;
   line-height: 40rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 500rpx;
 }

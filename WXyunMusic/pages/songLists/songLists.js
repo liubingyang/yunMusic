@@ -17,6 +17,19 @@ Page({
       }
     })
   },
+  gotoPath: function (event) {
+    console.log(event)
+    let dataset = event.currentTarget.dataset;
+    app.gotoPath(dataset.urlTo);
+    switch (dataset.urlTo) {
+      case "歌曲详情":
+        wx.setStorage({
+          key: 'songDetailId',
+          data: dataset.id
+        });
+        break;
+    }
+  },
   //获取歌单详情
   getPlaylistdetail(id) {
     wx.request({

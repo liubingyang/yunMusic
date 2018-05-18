@@ -1,4 +1,5 @@
 //app.js
+
 let pageAddress = require('common/pageAddress.js')
 let actionConf = require('common/actionConf.js')
 App({

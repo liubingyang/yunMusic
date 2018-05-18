@@ -1,66 +1,113 @@
 // pages/search/search.js
+let app = getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    searchValue: '',
+    showStep: 1,//1热搜及记录，2搜索列表，3搜索结果
+    hotSearchTag: [],//热搜图标
+    searchHistoryList: [],//搜索记录
+    searchSuggestList:[],//搜索建议
+    searchResult:[],//搜索结果
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    this.hotSearch()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  gotoPath: function (event) {
+    console.log(event)
+    let dataset = event.currentTarget.dataset;
+    app.gotoPath(dataset.urlTo);
+    switch (dataset.urlTo) {
+      case "歌曲详情":
+        wx.setStorage({
+          key: 'songDetailId',
+          data: dataset.id
+        });
+        break;
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  saveHistoryList(val){
+    this.data.searchHistoryList.unshift(val)
+    this.setData({ searchHistoryList: this.data.searchHistoryList })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //删除历史记录
+  shiftHistory(event){
+    this.data.searchHistoryList.splice(event.currentTarget.dataset.shift,1)
+    this.setData({ searchHistoryList: this.data.searchHistoryList })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+  //搜索结果
+  searchResult(event) {
+    console.log(event)
+    if (event.currentTarget){
+      let suggest = event.currentTarget.dataset.suggest;
+        this.setData({ searchValue: suggest })
+        this.saveHistoryList(suggest)
+    }
+    this.setData({showStep:3})
+    
+    wx.request({
+      url: app.actionConf.searchresult + this.data.searchValue,
+      success: res => {
+        console.log(res.data)
+        this.setData({ searchResult:res.data.result.songs})
+      }
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  //搜索建议
+  searchSuggest(){
+    wx.request({
+      url: app.actionConf.searchsuggest + this.data.searchValue,
+      success:res=>{
+        this.setData({ searchSuggestList:res.data.result.songs})
+      }
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  //聚焦
+  searchInputFoucs() {
+    if (this.data.searchValue) {
+      this.setData({showStep: 2})
+    }
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  //失焦
+  searchInputBlur() {
+    if (this.data.showStep==3){return}
+    this.setData({showStep: 1})
+  },
+  //清空输入框
+  clearSearchVlue() {
+    this.setData({
+      searchValue: '',
+      showStep:1,
+      searchResult:[]
+      })
+  },
+  //输入获取建议列表
+  searchInput(event) {
+    this.setData({searchValue: event.detail.value})
+    if (this.data.searchValue) {
+      this.setData({ showStep: 2 })
+    } else {
+      this.setData({ showStep: 1 })
+    }
+    if (event.detail.value.replace(/\s/g, '')){
+      this.searchSuggest();
+    }
+  },
+  //回车搜索
+  toSearch: function (event) {
+    if (!event.detail.value.replace(/\s/g, '')) { return };
+    // 保存记录
+    this.saveHistoryList(event.detail.value);
+    // 搜索结果
+    this.searchResult(event.detail.value);
+  },
+  //获取热搜标签
+  hotSearch: function () {
+    wx.request({
+      url: app.actionConf.hotsearch,
+      success: res => {
+        this.setData({hotSearchTag: res.data.result.hots})
+      }
+    })
   }
 })

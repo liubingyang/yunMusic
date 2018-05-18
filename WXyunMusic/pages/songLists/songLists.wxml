@@ -1,9 +1,12 @@
-<import src='/template/musicLists/musicLists.wxml'/>
-<import src='/template/comment/comment.wxml'/>
+<!-- 歌单详情页 -->
+<import src='/template/musicLists/musicLists.wxml' />
+<import src='/template/comment/comment.wxml' />
+<!-- 歌单背景图 -->
 <view class='lists-bg-wrap'>
-<view class='lists-bg' style='background-image:url("{{playlistdetail.coverImgUrl}}")'></view>
+  <view class='lists-bg' style='background-image:url("{{playlistdetail.coverImgUrl}}")'></view>
 </view>
 <view class='lists-tit'>
+  <!-- 歌单封面 -->
   <view class='lists-head'>
     <image class='lists-head-image' src='{{playlistdetail.coverImgUrl}}'></image>
     <view class='lists-play-num'>
@@ -12,6 +15,7 @@
     </view>
     <text class='red-icon'>歌单</text>
   </view>
+  <!-- 歌单名及作者 -->
   <view class='head-right'>
     <view class='lists-name'>{{playlistdetail.name}}</view>
     <view class='lists-author'>
@@ -20,20 +24,24 @@
     </view>
   </view>
 </view>
+<!-- 标签 -->
 <view class='lists-labels'>
-<view class=''>标签：</view>
+  <view class=''>标签：</view>
   <view class='lists-label' wx:for='{{playlistdetail.tags}}'>{{item}}</view>
 </view>
+<!-- 简介 -->
 <view class='list-introduction'>
   简介：{{playlistdetail.description}}
 </view>
+<!-- 歌曲列表 -->
 <view class='song-lists'>歌曲列表</view>
 <view class='song-content' wx:for='{{playlistdetail.tracks}}'>
   <view class='song-content-index'>{{index+1}}</view>
-  <view class='song-musicLists'>
+  <view class='song-musicLists' bindtap='gotoPath' data-url-to='歌曲详情' data-id='{{item.id}}'>
     <template is='musicLists' data='{{...item}}'></template>
   </view>
 </view>
+<!-- 评论 -->
 <view class='comment-tit'>精彩评论</view>
 <view class='comment-contents' wx:for='{{playlist}}'>
   <template is='comment' data='{{...item}}'></template>

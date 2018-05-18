@@ -1,7 +1,4 @@
 
-.hotSearch-wrap{
-  padding:0 30rpx;
-}
 .hotSearch-tit{
   font-size: 34rpx;
   color:#666;

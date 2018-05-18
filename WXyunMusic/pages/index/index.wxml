@@ -1,9 +1,9 @@
 <import src='/template/songSheet/songSheet.wxml'/>
 <import src='/template/musicLists/musicLists.wxml'/>
-<view class='header'>
-  <view class='header-name'>网易云音乐</view>
+<!-- <view class='header'>
+  <view class='header-name'>小红人音乐</view>
   <view class='header-download'>下载APP</view>
-</view>
+</view> -->
 <view class='content-title'>
   <view class='title-line'></view>推荐歌单   
 </view>
@@ -20,4 +20,4 @@
     <template is='musicLists' data='{{...item}}'></template>
   </view>
 </view>
-<view class='banquan'>网易公司版权所有©1997-2018　杭州乐读科技有限公司运营</view>
+<view class='banquan'>小红人版权所有©1997-2018</view>

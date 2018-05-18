@@ -1,0 +1,9 @@
+<template name='searchHistory'>
+   <view class='hotSearch-history'>
+      <icon class='history-icon'></icon>
+      <view class='history-right'>
+        <view class='history-name'>炎亚纶</view>
+        <icon class='history-xx'></icon>
+      </view>
+    </view>
+</template>

@@ -1,22 +1,27 @@
-<view class='page'style='background-image:("{{songDetail.al.picUrl}}")'>
-<view class='song-details'>
-  <image class='music-logo' src='http://s3.music.126.net/m/s/img/logo.png?0c21b75d22d52b65dc8083343d161fe4'></image>
-  <image class='music-needle' src='http://s3.music.126.net/m/s/img/needle.png?702cf6d95f29e2e594f53a3caab50e12'></image>
-  <view class='music-disc'>
-    <image class='music-disc-yuan' src='http://s3.music.126.net/m/s/img/disc.png?d3bdd1080a72129346aa0b4b4964b75f'></image>
-    <image class='music-disc-yuanguang' src='http://s3.music.126.net/m/s/img/disc_light.png?2bb24f3fd11569809b817b4988f12bc7'></image>
-    <image class='song-image' src='{{songDetail.al.picUrl}}'></image>
-    <icon class='song-play'></icon>
+
+<view class='bg-vh' style='background-image:url("{{songDetail.al.picUrl}}")'></view>
+<view class='detail-wrap'>
+  <view class='song-details'>
+    <image class='music-logo' src='http://s3.music.126.net/m/s/img/logo.png?0c21b75d22d52b65dc8083343d161fe4'></image>
+    <image class='music-needle' src='http://s3.music.126.net/m/s/img/needle.png?702cf6d95f29e2e594f53a3caab50e12'></image>
+    <view class='music-disc  {{playing?"circling":"1"}}'>
+      <image class='music-disc-yuan' src='http://s3.music.126.net/m/s/img/disc.png?d3bdd1080a72129346aa0b4b4964b75f'></image>
+      <image class='music-disc-yuanguang' src='http://s3.music.126.net/m/s/img/disc_light.png?2bb24f3fd11569809b817b4988f12bc7'></image>
+      <image class='song-image ' src='{{songDetail.al.picUrl}}'></image>
+    </view>
+     <icon class='song-play {{playing?"zanting":"bofang"}}' bindtap='playControl'></icon>
   </view>
-</view>
-<view class='song-lyric'>
-  <view class='sone-name'>{{songDetail.name}}</view>
-  <view class='song-lyric-lists'>
-    <view class='song-lyric-content'>
-      <view class='song-lyric-list'>作曲 : 陈建骐</view>
-      <view class='song-lyric-list'>作词 : 葛大为</view>
-      <view class='song-lyric-list'>编曲：陈建骐 George Chen</view>
+  <view class='song-lyric'>
+    <view class='sone-name'>{{songDetail.name}}</view>
+    <view class='song-lyric-lists'>
+      <view class='song-lyric-content'>
+        <view class='song-lyric-list'>作曲 : 陈建骐</view>
+        <view class='song-lyric-list'>作词 : 葛大为</view>
+        <view class='song-lyric-list'>编曲：陈建骐 George Chen</view>
+      </view>
     </view>
   </view>
 </view>
-</view> 
+<view class='audio-wrap'>
+<audio src="{{musicUrl}}" id="myAudio" controls loop></audio>
+</view>

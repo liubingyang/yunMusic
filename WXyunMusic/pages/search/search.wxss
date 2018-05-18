@@ -1,6 +1,6 @@
-@import '/template/hotSearch/hotSearch.wxss';
+
 @import '/template/searchList/searchList.wxss';
-@import '/template/searchResult/searchResult.wxss';
+@import '/template/musicLists/musicLists.wxss';
 .search-box{
   background: #ebecec;
   height: 60rpx;
@@ -10,6 +10,9 @@
   padding: 10rpx 30rpx;
   border-radius: 120rpx;
   margin:40rpx 30rpx;
+}
+.hotSearch-content{
+  padding:0 30rpx;
 }
 .search-icon{
   height: 40rpx;
@@ -32,4 +35,53 @@
 }
 .search-content{
   border-top: 1rpx solid #eee;
+}
+
+
+.hotSearch-tit{
+  font-size: 34rpx;
+  color:#666;
+  line-height: 100rpx; 
+}
+.hotSearch-labels{
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin-bottom:40rpx;
+  font-size: 34rpx;
+  color:#333;
+}
+.hotSearch-label{
+  padding: 10rpx 20rpx;
+  margin:10rpx;
+  border:1rpx solid #ececec;
+  border-radius: 40rpx;
+}
+.hotSearch-history{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.history-icon{
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 20rpx;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMCAzMCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjYzljYWNhIiBkPSJtMTUgMzBjLTguMjg0IDAtMTUtNi43MTYtMTUtMTVzNi43MTYtMTUgMTUtMTUgMTUgNi43MTYgMTUgMTUtNi43MTYgMTUtMTUgMTVtMC0yOGMtNy4xOCAwLTEzIDUuODItMTMgMTNzNS44MiAxMyAxMyAxMyAxMy01LjgyIDEzLTEzLTUuODItMTMtMTMtMTNtNyAxNmgtOGMtLjU1MiAwLTEtLjQ0Ny0xLTF2LTEwYzAtLjU1My40NDgtMSAxLTFzMSAuNDQ3IDEgMXY5aDdjLjU1MyAwIDEgLjQ0NyAxIDFzLS40NDcgMS0xIDEiLz48L3N2Zz4=);
+}
+.history-name{
+  font-size: 38rpx;
+}
+.history-xx{
+  height:30rpx;
+  width:30rpx;
+  background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjOTk5ODk5IiBkPSJtMTMuMzc5IDEybDEwLjMzOCAxMC4zMzdjLjM4MS4zODEuMzgxLjk5OCAwIDEuMzc5cy0uOTk4LjM4MS0xLjM3OCAwbC0xMC4zMzgtMTAuMzM4LTEwLjMzOCAxMC4zMzhjLS4zOC4zODEtLjk5Ny4zODEtMS4zNzggMHMtLjM4MS0uOTk4IDAtMS4zNzlsMTAuMzM4LTEwLjMzNy0xMC4zMzgtMTAuMzM4Yy0uMzgxLS4zOC0uMzgxLS45OTcgMC0xLjM3OHMuOTk4LS4zODEgMS4zNzggMGwxMC4zMzggMTAuMzM4IDEwLjMzOC0xMC4zMzhjLjM4LS4zODEuOTk3LS4zODEgMS4zNzggMHMuMzgxLjk5OCAwIDEuMzc4bC0xMC4zMzggMTAuMzM4Ii8+PC9zdmc+);
+}
+.history-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #ececec;
+  justify-content:space-between;
+  flex-grow: 1;
 }

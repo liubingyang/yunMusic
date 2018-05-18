@@ -1,66 +1,39 @@
 // pages/hotSong/hotSong.js
+
+let app=getApp();
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    hotPlayList:[]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  
   onLoad: function (options) {
-  
+    this.getHotPalyList()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
+  gotoPath: function (event) {
+    console.log(event)
+    let dataset = event.currentTarget.dataset;
+    app.gotoPath(dataset.urlTo);
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+    switch (dataset.urlTo) {
+      case "歌曲详情":
+        wx.setStorage({
+          key: 'songDetailId',
+          data: dataset.id
+        });
+        break;
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  //获取热歌单
+  getHotPalyList: function() {
+    wx.request({
+      url: app.actionConf.hotplaylist,
+      success: res => {
+        res.data.result.updateTimeName = new Date(res.data.result.updateTime).toLocaleDateString()
+        this.setData({
+          hotPlayList: res.data.result
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

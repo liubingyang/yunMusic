@@ -1,18 +1,34 @@
-<import src='/template/hotSearch/hotSearch.wxml'/>
-<import src='/template/searchList/searchList.wxml'/>
-<import src='/template/searchResult/searchResult.wxml'/>
+<import src='/template/searchList/searchList.wxml' />
+<import src='/template/musicLists/musicLists.wxml' />
 <view class='search-box'>
   <icon class='search-icon'></icon>
-  <input class='search-input' type='text' placeholder='搜索歌曲、歌手、专辑' placeholder-class='search-placeholder'></input>
-  <icon class='search-xx'></icon>
+  <input class='search-input' value='{{searchValue}}' type='text' placeholder='搜索歌曲、歌手、专辑' placeholder-class='search-placeholder' bindfocus='searchInputFoucs' bindblur='searchInputBlur' bindinput='searchInput' bindconfirm='toSearch'></input>
+  <icon class='search-xx' bindtap='clearSearchVlue' wx:if='{{searchValue.length>0}}'></icon>
 </view>
-
-<view class='hotSearch-content' >
-  <template is='hotSearch'></template>
+<!-- 热门搜索及历史 -->
+<view class='hotSearch-content' wx:if='{{showStep==1}}'>
+  <view class='hotSearch-tit'> 热门搜索</view>
+  <view class='hotSearch-labels'>
+    <view class='hotSearch-label' wx:for='{{hotSearchTag}}'  bindtap='searchResult' data-suggest='{{item.first}}'>{{item.first}}</view>
+  </view>
+  <view class='hotSearch-history' wx:for='{{searchHistoryList}}'>
+    <icon class='history-icon'></icon>
+    <view class='history-right'>
+      <view class='history-name'  bindtap='searchResult' data-suggest='{{item}}'>{{item}}</view>
+      <icon class='history-xx' bindtap='shiftHistory' data-shift='{{index}}'></icon>
+    </view>
+  </view>
 </view>
-<view class='searchList-content' wx:if='{{false}}'>
-  <template is='searchList'></template>
+<!-- 搜索建议列表 -->
+<view class='searchList-content' wx:if='{{showStep==2}}'>
+  <view class='input-copy'>搜索“{{searchValue}}”</view>
+  <view wx:for='{{searchSuggestList}}' bindtap='searchResult' data-suggest='{{item.name}}'>
+    <template is='searchList' data='{{...item}}'></template>
+  </view>
 </view>
-<view class='searchResult-content' wx:if='{{false}}'>
-  <template is='searchResult'></template>
+<!-- 搜索结果 -->
+<view class='searchResult-content' wx:if='{{showStep==3}}'>
+  <view wx:for='{{searchResult}}'  bindtap='gotoPath' data-url-to='歌曲详情' data-id='{{item.id}}'>
+   <template is='musicLists' data='{{...item}}'></template>
+  </view>
 </view>
